@@ -1,0 +1,56 @@
+
+
+.pricing-grid {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+  }
+  
+  .pricing-card {
+    border: 1px solid #000;
+    border-radius: 10px;
+    width: 20vw;
+    height: 50vh;
+    padding: 1em;
+    background-color: #efe3e3fa;
+    color: #000;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  .pricing-card h3 {
+    text-align: center;
+    color: #000;
+  }
+  
+  .pricing-card p {
+    text-align: center;
+    color: #666;
+  }
+
+  header {
+    background-color: darkslategrey;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  li {
+    padding: 1vh;
+  }
+
+ .pricing-card:hover{
+    transform: scale(1.05);
+
+  }
+  
+.pricing-card:hover {
+  background-color: #ff9999; /* Initial background color on hover */
+}
+
+.pricing-card:hover:nth-child(2) {
+  background-color: #99ff99; /* Second background color on hover */
+}
+
+.pricing-card:hover:nth-child(3) {
+  background-color: #9999ff; /* Third background color on hover */
+}

@@ -1,0 +1,83 @@
+:root {
+
+  --primary-color: rgba(8, 46, 5, 0.5);
+  --red-color: rgba(233, 72, 8, 0.8);
+
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+
+    background-image: url("/images/colourfulvortex.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
+* {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  position: relative;
+  font-weight: bold;
+  color: whitesmoke
+}
+
+h1 {
+  font-size: 3vh;
+}
+
+/* SmartPhone */
+@media screen and (max-width: 499px) {
+
+}
+
+/* Tablets */
+@media screen and (max-width: 899px) and (min-width: 500px) {}
+
+/* Laptop */
+@media screen and (min-width: 900px) and (max-width: 1319px) {}
+
+/* Desktop */
+@media screen and (min-width: 1319px) {}
+
+.row {
+  width: 100vw;
+}
+
+
+
+p {
+  font-size: 2vh;
+}
+
+.phone-number {
+  text-decoration: none;
+  /* Remove underline */
+  color: inherit;
+  /* Use the parent element's text color */
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+
+
+
