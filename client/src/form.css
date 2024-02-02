@@ -1,0 +1,27 @@
+form {
+    margin: auto;
+    align-self: center;
+    width: 50vw;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 3vh;
+  }
+
+  input,
+  textarea {
+
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }

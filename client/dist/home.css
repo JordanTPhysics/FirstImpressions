@@ -20,11 +20,13 @@ html {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  align-items: center;
+  justify-content: center;
 
-    background-image: url("/images/colourfulvortex.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url("/images/colourfulvortex.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
 }
 
@@ -34,7 +36,9 @@ html {
   text-align: center;
   position: relative;
   font-weight: bold;
-  color: whitesmoke
+  color: whitesmoke;
+  font-size: small;
+  
 }
 
 h1 {
@@ -42,9 +46,7 @@ h1 {
 }
 
 /* SmartPhone */
-@media screen and (max-width: 499px) {
-
-}
+@media screen and (max-width: 499px) {}
 
 /* Tablets */
 @media screen and (max-width: 899px) and (min-width: 500px) {}
@@ -75,9 +77,3 @@ p {
 a {
   text-decoration: none;
 }
-
-
-
-
-
-
