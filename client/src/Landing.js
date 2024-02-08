@@ -1,21 +1,19 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
-import './form.css';
+import './components/formstyle.css';
 
-const App = () => {
+const Landing = () => {
 
   const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
-    setFormData({...formData, [e.target.name]: e.target.value});
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>FirstImpressions - AI powered digital marketing for your business</h1>
 
-      </header>
+
       <main className='container m-0'>
         <section className='row'>
           <p>Our pipelines provide you with fast and frequent coverage on your socials. </p>
@@ -51,40 +49,40 @@ const App = () => {
           </div>
         </section>
         <section className='form row'>
-        <form>
-    <span>Enquire below to receive your free AI Marketing InfoDoc</span>
+          <form>
+            <span>Enquire below to receive your free AI Marketing InfoDoc</span>
 
-    <div class="form-group">
-      <label htmlFor="name">Name</label>
-      <input type="text"  name="name" id="name" required onChange={handleChange}/>
-    </div>
+            <div className="form-group">
+              <label htmlFor="name">Name</label>
+              <input type="text" name="name" id="name" required onChange={handleChange} />
+            </div>
 
-    <div class="form-group">
-      <label htmlFor="email">Email</label>
-      <input type="email"  name="email" id="email" required onChange={handleChange}/>
-    </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input type="email" name="email" id="email" required onChange={handleChange} />
+            </div>
 
-    <div class="form-group">
-      <label htmlFor="phone">Phone</label>
-      <input type="tel"  name="phone" id="phone" required onChange={handleChange}/>
-    </div>
+            <div className="form-group">
+              <label htmlFor="phone">Phone</label>
+              <input type="tel" name="phone" id="phone" required onChange={handleChange} />
+            </div>
 
-    <div class="form-group">
-      <label htmlFor="company">Company</label>
-      <input type="text"  name="company" id="company" required onChange={handleChange}/>
-    </div>
+            <div className="form-group">
+              <label htmlFor="company">Company</label>
+              <input type="text" name="company" id="company" required onChange={handleChange} />
+            </div>
 
-    <div class="form-group">
-      <label htmlFor="message">Comments / Questions</label>
-      <textarea  name="message" id="message" required onChange={handleChange}></textarea>
-    </div>
+            <div className="form-group">
+              <label htmlFor="message">Comments / Questions</label>
+              <textarea name="message" id="message" required onChange={handleChange}></textarea>
+            </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+            <button type="submit" className="btn btn-primary">Submit</button>
+          </form>
         </section>
       </main>
-    </div>
+
   );
 }
 
-export default App;
+export default Landing;

@@ -12,7 +12,8 @@ form {
 
   input,
   textarea {
-
+    font-size: large;
+    color: black;
     padding: 8px;
     margin-bottom: 12px;
     box-sizing: border-box;

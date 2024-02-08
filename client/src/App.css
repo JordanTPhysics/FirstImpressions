@@ -2,7 +2,7 @@ main {
   display: grid;
   height: 100vh;
   width: 100vw;
-  padding-top: 25vh;
+  padding-top: 20vh;
 
 }
 
@@ -12,6 +12,7 @@ main {
     padding: 1px;
     font-size: 3px;
   }
+
   .pricing-card {
     width: 65vw;
     height: 35vh;
@@ -26,6 +27,7 @@ main {
     flex-direction: column;
     flex-wrap: wrap;
   }
+
   input,
   textarea {
     width: 70vw;
@@ -37,6 +39,7 @@ main {
   li {
     padding: 1vh;
   }
+
   input,
   textarea {
     width: 70vw;
@@ -55,9 +58,11 @@ main {
     justify-content: space-around;
     padding: 1em;
   }
+
   li {
     padding: 1vh;
   }
+
   input,
   textarea {
     width: 30vw;
@@ -76,6 +81,7 @@ main {
     justify-content: space-around;
     padding: 1em;
   }
+
   input,
   textarea {
     width: 30vw;
@@ -116,8 +122,42 @@ header {
   text-align: center;
   position: fixed;
   z-index: 100;
+  display: grid;
+  grid-template-columns: 6fr 2fr;
 }
 
+.links-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.links {
+  float: left;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+  text-decoration: none;
+  font-size: 2vh;
+  transition: ease .5s;
+}
+
+.links:hover {
+  background-color: darkcyan;
+  color: #000;
+  border-radius: 10px;
+  transition: ease 1s;
+  text-decoration: none;
+  text-transform: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+
+}
 
 
 .pricing-card:hover {
