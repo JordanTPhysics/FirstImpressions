@@ -4,7 +4,6 @@ import { useAuth } from './AuthContext';
 import { Link } from 'react-router-dom';
 import { FacebookProvider, LoginButton, useFacebook } from 'react-facebook';
 import { InstagramLogin } from '@amraneze/react-instagram-login';
-import { useEffect } from 'react';
 
 const DashboardComponent = () => {
   const { user, logout } = useAuth();
@@ -12,8 +11,6 @@ const DashboardComponent = () => {
   const responseInstagram = (response) => {
     console.log(response);
   };
-
-
     useEffect(() => {
       window.fbAsyncInit = function() {
         window.FB.init({
