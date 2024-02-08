@@ -21,6 +21,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@amraneze/react-instagram-login": "^4.0.0",
     "@emailjs/browser": "^3.10.0",
     "axios": "^1.5.0",
     "date-fns": "^3.3.1",

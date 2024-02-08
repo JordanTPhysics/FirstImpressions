@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 import './components/formstyle.css';
-
+import { FacebookProvider, Like, LoginButton } from 'react-facebook';
 const Landing = () => {
 
   const [formData, setFormData] = useState({});
@@ -48,6 +48,12 @@ const Landing = () => {
             </div>
           </div>
         </section>
+        <section className='row'>
+        <FacebookProvider appId="{655489229927403}">
+        <LoginButton scope="email" onCompleted={console.log} onError={console.error}/>
+        <Like href="http://www.facebook.com" colorScheme="dark" showFaces share />
+      </FacebookProvider>
+      </section>
         <section className='form row'>
           <form>
             <span>Enquire below to receive your free AI Marketing InfoDoc</span>
