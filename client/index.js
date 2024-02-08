@@ -9,26 +9,26 @@ import Header from './src/components/Header.js';
 import PrivacyPolicy from './src/components/Privacy.js';
 
 const App = () => {
-    return (
-      <AuthProvider>
-        <Header/>
+  return (
+    <AuthProvider>
+      <Header />
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/login" element={<LoginComponent />} />
           <Route path="/dashboard" element={<DashboardComponent />} />
         </Routes>
-      </AuthProvider>
-    );
-  };
-  
-  const container = document.getElementById('root');
-  
-  createRoot(container).render(
-    <React.StrictMode>
-      <BrowserRouter>
-        <App />
       </BrowserRouter>
-    </React.StrictMode>
+    </AuthProvider>
   );
+};
+
+const container = document.getElementById('root');
+
+createRoot(container).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
