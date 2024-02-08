@@ -6,6 +6,7 @@ import LoginComponent from './src/components/LoginComponent.js';
 import DashboardComponent from './src/components/DashboardComponent.js';
 import { AuthProvider } from './src/components/AuthContext.js';
 import Header from './src/components/Header.js';
+import PrivacyPolicy from './src/components/Privacy.js';
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
         <Header/>
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/login" element={<LoginComponent />} />
           <Route path="/dashboard" element={<DashboardComponent />} />
         </Routes>
