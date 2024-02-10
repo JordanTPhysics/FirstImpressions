@@ -10,6 +10,7 @@
   flex-direction: column;
   min-height: 100vh;
   min-width: 100vw;
+  background-color: rgba(200, 200, 200, 0.3);
 
 }
 
@@ -34,7 +35,7 @@ html {
   text-align: center;
   position: relative;
   font-weight: bold;
-  color: whitesmoke
+  color: #666
 }
 
 h1 {

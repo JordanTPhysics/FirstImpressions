@@ -9,18 +9,15 @@ import Header from './src/components/Header.js';
 import PrivacyPolicy from './src/components/Privacy.js';
 
 const App = () => {
-  return (
-    <AuthProvider>
+  return (<>
       <Header />
-      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/login" element={<LoginComponent />} />
           <Route path="/dashboard" element={<DashboardComponent />} />
         </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+        </>
   );
 };
 
@@ -28,7 +25,11 @@ const container = document.getElementById('root');
 
 createRoot(container).render(
   <React.StrictMode>
+    <AuthProvider>
+    <BrowserRouter>
     <App />
+    </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>
 );
 

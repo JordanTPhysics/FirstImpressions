@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './App.css';
 import './components/formstyle.css';
-import { FacebookProvider, Like, LoginButton } from 'react-facebook';
 const Landing = () => {
 
   const [formData, setFormData] = useState({});
@@ -12,8 +10,6 @@ const Landing = () => {
   }
 
   return (
-
-
       <main className='container m-0'>
         <section className='row'>
           <p>Our pipelines provide you with fast and frequent coverage on your socials. </p>
@@ -49,10 +45,8 @@ const Landing = () => {
           </div>
         </section>
         <section className='row'>
-        <FacebookProvider appId="{655489229927403}">
-        <LoginButton scope="email" onCompleted={console.log} onError={console.error}/>
-        <Like href="http://www.facebook.com" colorScheme="dark" showFaces share />
-      </FacebookProvider>
+          <h2>Why choose us?</h2>
+          <p>Our pipelines provide you with fast and frequent coverage on your socials. We use AI to generate content and automate your posts. We also provide email automation and analytics to help you reach your audience.</p>
       </section>
         <section className='form row'>
           <form>
