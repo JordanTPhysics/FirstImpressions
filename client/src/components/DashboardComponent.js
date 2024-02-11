@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { FacebookProvider, LoginButton, useFacebook } from 'react-facebook';
 import { InstagramLogin } from '@amraneze/react-instagram-login';
 
+
+
 const DashboardComponent = () => {
   const { user, logout } = useAuth();
 
@@ -21,7 +23,7 @@ const DashboardComponent = () => {
       <div className='row' >
         <div className='col-md-6'>
 
-          <FacebookProvider appId="{655489229927403}" >
+          <FacebookProvider appId="{1312877263439256}" >
             <LoginButton scope="email" onCompleted={console.log} onError={console.error} className="facebooklogin"/>
           </FacebookProvider>
         </div>
