@@ -8,6 +8,10 @@ import './formstyle.css';
 const url = "http://127.0.0.1:5000";
 
 const LoginComponent = () => {
+
+  const { user, setUser, loggedIn, setLoggedIn, login, logout } = useAuth();
+
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 

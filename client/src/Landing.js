@@ -9,9 +9,6 @@ const Landing = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  FB.getLoginStatus(function (response) {
-    statusChangeCallback(response);
-  });
 
   return (
     <main className='container m-0'>
@@ -32,7 +29,7 @@ const Landing = () => {
             <h3>Pro</h3>
             <p>£20/month</p>
             <ul>
-              <li>Daily posts for 2 social media pages of your choice</li>
+              <li>Daily posts for 4 social media pages of your choice</li>
               <li>Guide to setup your unique automation scripts</li>
               <li>Email automation up to 500 clients</li>
             </ul>

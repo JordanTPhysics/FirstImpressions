@@ -1,15 +1,19 @@
 import React, { createContext, useContext, useState } from 'react';
 
-const server = "http://127.0.0.1:5000";
+const server = "http://localhost:8000";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  const login = async (username, password) => {
+  const value = { user, setUser, loggedIn, setLoggedIn, login, logout};
+
+  const login = async (e, username, password) => {
+    e.preventDefault();
     try {
-      const response = await fetch(`${server}/login`, {
+      const response = await fetch(`${server}/users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -20,6 +24,7 @@ export const AuthProvider = ({ children }) => {
       if (response.ok) {
         const userData = await response.json();
         setUser(userData);
+        setLoggedIn(true);
       } else {
         throw new Error('Authentication failed');
       }
@@ -30,12 +35,13 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    // Replace with actual logout logic
+    e.preventDefault();
+    setLoggedIn(false);
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   );
