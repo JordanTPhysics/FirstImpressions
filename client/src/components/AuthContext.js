@@ -1,52 +1,43 @@
 import React, { createContext, useContext, useState } from 'react';
-
-const server = "http://localhost:8000";
+import axios from 'axios';
 
 const AuthContext = createContext();
+export const useAuth = () => useContext(AuthContext);
+
+const url = process.env.SERVER_URL || 'http://localhost:3000/api';
+
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loggedIn, setLoggedIn] = useState(false);
 
-  const value = { user, setUser, loggedIn, setLoggedIn, login, logout};
+  const login = async (username, password) => {
+    const response = await axios.post(`${url}/auth/login`,
+      { username, password },
+      { withCredentials: true, headers: { 'Content-Type': 'application/json' } });
 
-  const login = async (e, username, password) => {
-    e.preventDefault();
-    try {
-      const response = await fetch(`${server}/users`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      if (response.ok) {
-        const userData = await response.json();
-        setUser(userData);
-        setLoggedIn(true);
-      } else {
-        throw new Error('Authentication failed');
+      if (response.status !== 200) {
+        console.log('Error logging in', response.data.message);
+        return;
       }
-    } catch (error) {
-      console.error('Authentication error:', error);
-      throw error;
-    }
+
+    setUser(response.data.user);
+    localStorage.setItem('user', JSON.stringify(response.data.user));
+    localStorage.setItem('token', response.data.token);
   };
 
   const logout = () => {
-    e.preventDefault();
-    setLoggedIn(false);
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
     setUser(null);
   };
 
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
+  const value = {
+    user,
+    login,
+    logout,
+  };
+
+  return <AuthContext.Provider value={value}> {children} </AuthContext.Provider>
+
 };
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};

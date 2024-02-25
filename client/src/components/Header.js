@@ -1,30 +1,46 @@
-// Header.js
-import React from 'react';
+
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+
+  const executeScroll = () => {
+    document.getElementById('outreach').scrollIntoView({ behavior: 'smooth' })
+  }
+
+
+
   return (
-    <header className="App-header">
-      <h1>FirstImpressions - AI powered digital marketing for your business</h1>
-      <ul className='links-list'>
-        <li className='links'>
-          <Link to={`login`} >Login</Link>
-        </li>
-        <li className='links'>
-          <Link to={`dashboard`}>Dash</Link>
-        </li>
-        <li className='links'>
-          <Link to={``}>Home</Link>
-        </li>
-        <li className='links'>
-          <Link to={`Privacy`}>Privacy</Link>
-        </li>
-      </ul>
-      <div
-        className="fb-like"
-        data-share="true"
-        data-width="450"
-        data-show-faces="true">
+    <header className="App-header row m-0">
+      
+        <div className='col-md-4'>
+          <img src="/images/FirstImpression.jpg" alt="First Impression Marketing" className="App-logo" />
+        </div>
+        <div className='col-md-4'>
+          <h1>First Impression </h1>
+          <h2>Scalable Marketing Solutions </h2>
+          <button className='App-btn' onClick={executeScroll}>Yes Please!</button>
+
+        </div>
+
+
+      <div className='col-md-4'>
+        <ul className='links-list'>
+          <li className='links'>
+            <Link to={`login`} ><div className='App-btn'>Login</div>  </Link>
+          </li>
+          <li className='links'>
+            <Link to={`dashboard`}><div className='App-btn'>Dash</div></Link>
+          </li>
+          <li className='links'>
+            <Link to={``}><div className='App-btn'>Home</div></Link>
+          </li>
+          <li className='links'>
+            <Link to={`Privacy`}><div className='App-btn'>Privacy</div></Link>
+          </li>
+        </ul>
+      <h2>More Growth. More Clients. Guaranteed.</h2>
+
       </div>
     </header>
   );

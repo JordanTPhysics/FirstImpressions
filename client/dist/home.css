@@ -2,7 +2,8 @@
 
   --primary-color: rgba(8, 46, 5, 0.5);
   --red-color: rgba(233, 72, 8, 0.8);
-
+  --bs-gutter-x: 0 !important;
+  --bs-gutter-y: 0 !important;
 }
 
 #root {
@@ -20,25 +21,21 @@ html {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
-  align-items: center;
-  justify-content: center;
 
-  background-image: url("/images/colourfulvortex.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url("/images/aiPower.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
 
 * {
-  font-family: "Nunito", sans-serif;
+  font-family: "Konit", sans-serif;
   text-align: center;
   position: relative;
   font-weight: bold;
-  color: whitesmoke;
-  font-size: small;
-  
+  color: whitesmoke
 }
 
 h1 {
@@ -46,7 +43,9 @@ h1 {
 }
 
 /* SmartPhone */
-@media screen and (max-width: 499px) {}
+@media screen and (max-width: 499px) {
+
+}
 
 /* Tablets */
 @media screen and (max-width: 899px) and (min-width: 500px) {}
@@ -59,6 +58,7 @@ h1 {
 
 .row {
   width: 100vw;
+  padding-top: 10vh;
 }
 
 

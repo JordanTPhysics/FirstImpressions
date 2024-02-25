@@ -1,4 +1,4 @@
 /client/node_modules
-/instagram-bot/.env
-/server/venv
 /auxiliary
+/server/.env
+/server/env
