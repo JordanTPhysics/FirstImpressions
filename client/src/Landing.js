@@ -99,11 +99,6 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section className='row user-box'>
-        <h2>Why choose us?</h2>
-        <p>Our pipelines provide you with fast and frequent coverage on your socials. We use AI to generate content and automate your posts. We also provide email automation and analytics to help you reach your audience.</p>
-      </section>
-
     </main>
 
   );

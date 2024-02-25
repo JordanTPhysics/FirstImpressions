@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "babel -d dist",
+    "build": "babel . -d dist",
     "serve": "node dist/server.js"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
     "axios": "^1.6.7",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",

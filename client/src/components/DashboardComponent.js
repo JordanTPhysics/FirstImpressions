@@ -1,7 +1,7 @@
 // DashboardComponent.js
 import React, { useEffect } from 'react';
 import { useAuth } from './AuthContext';
-import { Link, redirect, useLocation } from 'react-router-dom';
+import { Link, Navigate, useLocation } from 'react-router-dom';
 import { FacebookProvider, LoginButton, useFacebook } from 'react-facebook';
 import { InstagramLogin } from '@amraneze/react-instagram-login';
 
@@ -81,7 +81,7 @@ const DashboardComponent = () => {
         <div className='col-md-4'></div>
         <div className='col-md-4'>
           <h2>You need to login to access the dashboard:</h2>
-          <Link to={`login`} /><div className='App-btn'>Login</div>
+          <Navigate to={`/`} /><div className='App-btn'>Login</div>
           
         </div>
         <div className='col-md-4'></div>

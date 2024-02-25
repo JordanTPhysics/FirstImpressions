@@ -4,7 +4,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 const router = express.Router();
-const { getDb } = require('../config/db');
 
 router.post('/register', async (req, res) => {
 
@@ -35,7 +34,7 @@ router.post('/login', async (req, res) => {
   if (!username || !password) {
     return res.status(400).json({ message: 'Missing fields' });
   }
-  
+
   try {
     const user = await User.findOne({ username });
     if (!user) {
