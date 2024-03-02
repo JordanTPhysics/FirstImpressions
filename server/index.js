@@ -8,7 +8,8 @@ const authRoutes = require('./api/authRoutes');
 const testRoutes = require('./api/testRoutes');
 
 mongoose.connect(process.env.MONGODB_URI, {
-  ssl: true});
+  ssl: true,
+  });
 
   const db = mongoose.connection;
   db.on('error', console.error.bind(console, 'connection error:'));
@@ -20,14 +21,15 @@ mongoose.connect(process.env.MONGODB_URI, {
   const PORT = process.env.PORT || 3000;
 
   app.use(express.json());
-  app.use(cors());
+  app.use(cors("http://localhost:5000"));
 
   app.use('/api/auth', authRoutes);
   app.use('/api/test', testRoutes);
 
-  app.use(express.static(path.join(__dirname, '../client/dist')));
+
+  app.use(express.static("../client/dist"));
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
   });
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
