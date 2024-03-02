@@ -4,9 +4,7 @@
   "description": "First Impression",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "webpack",
-    "serve": "node dist/bundle.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "axios": "^1.6.7",
