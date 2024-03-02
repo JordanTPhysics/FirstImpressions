@@ -54,10 +54,6 @@ jobs:
         run: |
           cd server
           npm install
-
-      - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v2
-        id: deploy-to-webapp
     
       - name: Login to Azure
         uses: azure/login@v1
