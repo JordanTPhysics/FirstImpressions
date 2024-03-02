@@ -21,6 +21,21 @@ jobs:
         with:
           node-version: '18.x'
 
+      - name: Install dependencies for client-side (frontend)
+        run: |
+          cd client
+          npm install
+
+      - name: Build client-side (frontend) application
+        run: |
+          cd client
+          npm run build
+
+      - name: Install dependencies for server-side (backend)
+        run: |
+          cd server
+          npm install
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
