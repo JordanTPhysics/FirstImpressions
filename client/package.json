@@ -23,21 +23,16 @@
   },
   "dependencies": {
     "@amraneze/react-instagram-login": "^4.0.0",
-    "@emailjs/browser": "^3.10.0",
     "axios": "^1.6.7",
-    "date-fns": "^3.3.1",
     "dotenv": "^16.4.2",
-    "emailjs-com": "^3.2.0",
     "path": "^0.12.7",
     "react": "^18.2.0",
-    "react-chartjs-2": "^5.2.0",
-    "react-date-picker": "^9.2.0",
     "react-dom": "^18.2.0",
-    "react-facebook": "^9.0.12",
     "react-router-dom": "^6.22.0"
   },
   "scripts": {
     "start": "webpack-dev-server .",
-    "build": "webpack ."
+    "build": "webpack . && copy public\\web.config dist\\web.config && copy public\\home.css dist\\home.css && copy public\\images dist\\images"
+
   }
 }
