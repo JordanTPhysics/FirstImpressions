@@ -15,28 +15,10 @@
     <link rel="stylesheet" href="home.css" />
 
   <title>Document</title>
-<script defer src="/server/client/dist/index_bundle.js"></script></head>
+</head>
 
 <body>
   <div id="root"></div>
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '1312877263439256',
-        xfbml      : true,
-        version    : 'v19.0'
-      });
-      FB.AppEvents.logPageView();
-    };
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
 </body>
 
 </html>

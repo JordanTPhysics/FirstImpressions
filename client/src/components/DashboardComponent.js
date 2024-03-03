@@ -1,17 +1,12 @@
-// DashboardComponent.js
 import React, { useEffect } from 'react';
 import { useAuth } from './AuthContext';
 import { Link, Navigate, useLocation } from 'react-router-dom';
-import { FacebookProvider, LoginButton, useFacebook } from 'react-facebook';
-import { InstagramLogin } from '@amraneze/react-instagram-login';
 
 
 const DashboardComponent = () => {
   const { user, logout } = useAuth();
+
   const location = useLocation();
-  const responseInstagram = (response) => {
-    console.log(response);
-  };
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -44,17 +39,10 @@ const DashboardComponent = () => {
           <h2>Connect your socials</h2>
           <ul className='links-list'>
             <li className='links'>
-              <FacebookProvider appId="{1312877263439256}" >
-                <LoginButton scope="email" onCompleted={console.log} onError={console.error} className="facebooklogin" />
-              </FacebookProvider>
+
             </li>
             <li className='links'>
-              <InstagramLogin
-                clientId="CLIENT_ID"
-                buttonText="Login"
-                onSuccess={responseInstagram}
-                onFailure={responseInstagram}
-              />
+
             </li>
             <li className='links'>
               <button className='' onClick={linkedInLogin}>LinkedIn</button>
