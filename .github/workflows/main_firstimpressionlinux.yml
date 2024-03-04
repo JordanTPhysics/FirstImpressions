@@ -50,7 +50,7 @@ jobs:
       - name: Build client-side (frontend) application
         run: |
           cd client
-          npm run build
+          npm run gitaction
 
       - name: Install dependencies for server-side (backend)
         run: |

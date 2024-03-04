@@ -33,7 +33,7 @@
   "scripts": {
     "start": "webpack-dev-server .",
     "build": "webpack . && shx cp public\\web.config dist\\web.config && shx cp public\\index.html dist\\index.html && shx cp public\\home.css dist\\home.css",
-    "gitaction": "webpack . && shx cp public/web.config dist/web.config && shx cp public/index.html dist/index.html && shx cp public/home.css dist/home.css"
+    "gitaction": "webpack . && node copy.js"
 
   }
 }
