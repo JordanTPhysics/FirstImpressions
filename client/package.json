@@ -16,6 +16,7 @@
     "css-loader": "^6.7.3",
     "dotenv-webpack": "^8.0.1",
     "html-webpack-plugin": "^5.5.0",
+    "shx": "^0.3.4",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
@@ -31,7 +32,6 @@
   },
   "scripts": {
     "start": "webpack-dev-server .",
-    "build": "webpack . && copy public\\web.config dist\\web.config && copy public\\index.html dist\\index.html && copy public\\home.css dist\\home.css && copy public\\images dist\\images"
-
+    "build": "webpack . && shx cp public\\web.config dist\\web.config && shx cp public\\index.html dist\\index.html && shx cp public\\home.css dist\\home.css "
   }
 }
