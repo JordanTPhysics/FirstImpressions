@@ -44,10 +44,6 @@ jobs:
         run: |
           cd client
           npm install
-
-      - name: Build client-side (frontend) application
-        run: |
-          cd client
           npm run gitaction
 
       - name: Install dependencies for server-side (backend)
