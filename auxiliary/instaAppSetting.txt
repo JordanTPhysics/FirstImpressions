@@ -1,1 +1,0 @@
-https://api.instagram.com/oauth/authorize?client_id={1135426594018544}&redirect_uri={https://bucolic-swan-3ec39d.netlify.app/}&scope=user_profile,user_media&response_type=code
