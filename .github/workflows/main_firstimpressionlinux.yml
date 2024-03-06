@@ -42,20 +42,14 @@ jobs:
         with:
           name: node-app
           
-      - name: Install dependencies for client-side (frontend)
+      - name: Install dependencies and build client-side (frontend)
         run: |
           cd client
           npm install
-
-      - name: Build client-side (frontend) application
-        run: |
-          cd client
-          mkdir -p /home/runner/work/FirstImpressions/FirstImpressions/server/dist/
           npm run gitaction
 
       - name: Install dependencies for server-side (backend)
         run: |
-          cd server
           npm install
     
       - name: Login to Azure
