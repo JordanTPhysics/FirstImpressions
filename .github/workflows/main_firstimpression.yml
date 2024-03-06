@@ -21,12 +21,6 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
-      
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
@@ -39,21 +33,26 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    permissions:
-      id-token: write #This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
           name: node-app
-      
-      - name: Login to Azure
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_2DFF0E4602AF4990B1A81F5432B65096 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_DCE36EAB8C0742EEA9ACEBFD8DB84A53 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CF5C91F01F594078B2156F3EC6D0D2E4 }}
+          
+      - name: Install dependencies for client-side (frontend)
+        run: |
+          cd client
+          npm install
+
+      - name: Build client-side (frontend) application
+        run: |
+          cd client
+          npm run gitaction
+
+      - name: Install dependencies for server-side (backend)
+        run: |
+          npm install
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -61,5 +60,5 @@ jobs:
         with:
           app-name: 'FirstImpression'
           slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_679730EB889B4484878745871E6F698E }}
           package: .
-          
