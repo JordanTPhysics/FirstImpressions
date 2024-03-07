@@ -3,8 +3,8 @@ const path = require('path');
 
 const filesToCopy = [
   'web.config',
-  'index.html',
   'home.css',
+  'images'
 ];
 
 filesToCopy.forEach(file => {
