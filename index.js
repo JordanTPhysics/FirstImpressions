@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URI, {
   const PORT = process.env.PORT || 3000;
 
   app.use(express.json());
-  app.use(cors("http://localhost:5000"));
+  app.use(cors("https://firstimpressionlinux.azurewebsites.net"));
 
   app.use('/api/auth', authRoutes);
   app.use('/api/test', testRoutes);

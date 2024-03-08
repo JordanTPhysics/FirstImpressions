@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "",
-  "proxy": "http://localhost:3000",
+  "proxy": "https://firstimpressionlinux.azurewebsites.net",
   "main": "index.js",
   "keywords": [],
   "author": "",
