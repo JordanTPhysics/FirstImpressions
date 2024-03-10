@@ -4,7 +4,7 @@ import axios from 'axios';
 const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
-const url = process.env.SERVER_URL || 'http://localhost:3000/api';
+const url = process.env.PRODUCTION_URL || 'https://firstimpressionlinux.azurewebsites.net/api';
 
 
 export const AuthProvider = ({ children }) => {
