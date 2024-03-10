@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useAuth } from './AuthContext';
 import { Link, Navigate, useLocation } from 'react-router-dom';
 
+const baseUrl = process.env.PRODUCTION_URL  
 
 const DashboardComponent = () => {
   const { user, logout } = useAuth();
@@ -15,7 +16,7 @@ const DashboardComponent = () => {
 
     if (code && state === "ksdughseoidg") {
       
-      fetch("http://localhost:3000/auth/linkedin/callback", {
+      fetch(`${baseUrl}/auth/linkedin/callback`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -26,7 +27,7 @@ const DashboardComponent = () => {
   }, [location]);
 
   const linkedInLogin = () => {
-    window.location.href = 'http://localhost:3000/auth/linkedin';
+    window.location.href = `${baseUrl}/auth/linkedin`;
   };
   return (<>
     {user ? <> <div className='row'>
