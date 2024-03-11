@@ -3,6 +3,11 @@ form {
     align-self: center;
     width: 50vw;
   }
+  @media screen and (max-width: 768px) {
+    form {
+      width: 100vw;
+    }
+  }
 
   label {
     display: block;

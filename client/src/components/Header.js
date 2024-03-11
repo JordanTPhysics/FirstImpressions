@@ -13,10 +13,10 @@ const Header = () => {
   return (
     <header className="App-header row m-0">
       
-        <div className='col-md-4'>
+        <div >
           <img src="/images/FirstImpression.jpg" alt="First Impression Marketing" className="App-logo" />
         </div>
-        <div className='col-md-4'>
+        <div >
           <h1>First Impression </h1>
           <h2>Scalable Marketing Solutions </h2>
           <button className='App-btn' onClick={executeScroll}>Yes Please!</button>
@@ -24,7 +24,7 @@ const Header = () => {
         </div>
 
 
-      <div className='col-md-4'>
+      <div >
         <ul className='links-list'>
           <li className='links'>
             <Link to={`login`} ><div className='App-btn'>Login</div>  </Link>

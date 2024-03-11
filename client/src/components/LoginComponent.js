@@ -69,7 +69,7 @@ const LoginComponent = () => {
                             <label>Password:</label>
                             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                         </div>
-                        <button type="button" onClick={handleLogin}>Login</button>
+                        <button type="button" onClick={handleLogin} className='App-btn'>Login</button>
                     </form>
 
                     <form>
@@ -86,11 +86,11 @@ const LoginComponent = () => {
                             <label>Email:</label>
                             <input type="email" value={newEmail} onChange={(e) => setNewEmail(e.target.value)} />
                         </div>
-                        <button type="button" onClick={handleRegister}>Register</button>
+                        <button type="button" onClick={handleRegister} className='App-btn'>Register</button>
                     </form>
                 </div> : <div>
                     <h3>You are Logged In, head to the dashboard or Log Out below</h3>
-                    <Link to={`dashboard`}><div className='App-btn'>Dashboard</div></Link>
+                    <Link to={`./dashboard`}><div className='App-btn'>Dashboard</div></Link>
 
                     <button onClick={handleLogout}>Log Out</button>
                 </div>}

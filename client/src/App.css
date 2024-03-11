@@ -1,11 +1,13 @@
 
 
-.container {
+.container, .row, div {
   padding: 0%;
   margin: 0%;
   --bs-gutter-x: 0 !important;
   --bs-gutter-y: 0 !important;
 }
+
+
 
 @media screen and (max-width: 499px) {
 
@@ -14,28 +16,38 @@
   }
 
   .App-header {
-    grid-template-columns: 1fr 1fr 1fr;
+    text-wrap: wrap;
+    grid-template-columns: 1fr;
     padding-bottom: 10vh;
   }
 
   .App-btn {
     height: 5vh;
     width: 40vw;
-    border-radius: 0%;
+    border-radius: none;
     border: none;
     font-size: 1vh;
   }
 
   h1 {
-    font-size: 0.3vh;
+    font-size: 3vh;
   }
-
+  h2 {
+    font-size: 3vh;
+  }
+  h3 {
+    font-size: 2.3vh;
+  }
+  h4 {
+    font-size: 2vh;
+  }
   .li {
     padding: 1px;
     font-size: 3px;
   }
 
   .links-list {
+    grid-template-columns: 1fr 1fr;
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
@@ -73,6 +85,7 @@
   }
 
   .links-list {
+    grid-template-columns: repeat(4, 1fr);
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
@@ -91,14 +104,17 @@
 /* Laptop */
 @media screen and (min-width: 900px) and (max-width: 1319px) {
 
-  .App-header .col-md-4 {
-    text-wrap: nowrap;
+  .links-list {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
   }
 
   .App-header {
     position: fixed;
     grid-template-columns: 1fr 1fr 1fr;
-    
+    text-wrap: nowrap;
   }
 
   .pricing-card {
@@ -128,12 +144,19 @@
 
 /* Desktop */
 @media screen and (min-width: 1319px) {
+
+  .links-list {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
   .App-header .col-md-4 {
     text-wrap: nowrap;
   }
   .App-header{
-    grid-template-columns: 1fr 1fr 1fr;
-
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .pricing-card {
@@ -144,7 +167,8 @@
   .pricing-grid {
     display: flex;
     justify-content: space-around;
-    padding: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
   }
 
   input,
@@ -156,15 +180,6 @@
     width: 100vw;
   }
 }
-
-.container{
-  padding: 0%;
-  margin: 0%;
-  --bs-gutter-x: 0 !important;
-  --bs-gutter-y: 0 !important;
-
-}
-
 
 .col-md-4 {
   text-align: center;
@@ -183,7 +198,8 @@
 .pricing-grid {
   display: flex;
   justify-content: space-around;
-  padding: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
 }
 
 .pricing-card {
@@ -233,14 +249,13 @@ h4 {
 
 
 .App-header {
-  display: flex;
+  display: grid;
   background-color: rgb(36, 37, 37);
   width: 100vw;
   padding: 1em;
   text-align: center;
   z-index: 100;
-  display: grid;
-  grid-template-columns: 6fr 2fr 2fr;
+
 }
 
 form {
@@ -288,7 +303,7 @@ form {
 }
 
 .links-list {
-  display: flex;
+  display: grid;
   list-style-type: none;
   margin: 0;
   padding: 0;
