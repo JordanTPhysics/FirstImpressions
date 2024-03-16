@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const authRoutes = require('./api/authRoutes');
 const testRoutes = require('./api/testRoutes');
+const liRoutes = require('./api/liRoutes');
 
 mongoose.connect(process.env.MONGODB_URI, {
   ssl: true,
@@ -25,6 +26,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
   app.use('/api/auth', authRoutes);
   app.use('/api/test', testRoutes);
+  app.use('/api/auth/linkedin', liRoutes)
 
 
   app.use(express.static(path.join(__dirname, 'client', 'dist')));
