@@ -1,14 +1,36 @@
 
-import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
 
   const executeScroll = () => {
     document.getElementById('outreach').scrollIntoView({ behavior: 'smooth' })
   }
+  const location = useLocation();
+  const baseUrl = process.env.PRODUCTION_URL || "http://localhost:3000/api";
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const code = queryParams.get('code');
+    const state = queryParams.get('state');
 
+    if (code) {
+      
+      fetch(`${baseUrl}/auth/linkedin/callback`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'x-www-form-urlencoded',
+        },
+        body: JSON.stringify({ code }),
+      });
+    }
+  }, [location]);
 
+  const linkedInLogin = () => {
+    window.location.href = `${baseUrl}/auth/linkedin`;
+    console.log(window.location.href);
+    console.log(location, location.pathname);
+  };
 
   return (
     <header className="App-header row m-0">
@@ -20,7 +42,7 @@ const Header = () => {
           <h1>First Impression </h1>
           <h2>Scalable Marketing Solutions </h2>
           <button className='App-btn' onClick={executeScroll}>Yes Please!</button>
-
+          <button className='' onClick={linkedInLogin}>LinkedIn</button>
         </div>
 
 

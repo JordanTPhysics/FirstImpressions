@@ -1,36 +1,64 @@
 const express = require('express');
-const passport = require('passport');
-const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
+const axios = require('axios');
+
+const passport = require('../util/Passport');
 
 const router = express.Router();
-const baseUrl = process.env.PRODUCTION_URL;
+const baseUrl = process.env.PRODUCTION_URL || "http://localhost:3000/api";
+const CLIENT_ID = process.env.LI_CLIENT_ID;
+const CLIENT_SECRET = process.env.LI_CLIENT_SECRET;
+const REDIRECT_URI = `${baseUrl}/auth/linkedin/callback`;
 
-// Configure LinkedIn authentication strategy
-passport.use(new LinkedInStrategy({
-    clientID: process.env.LINKEDIN_CLIENT_ID,
-    clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
-    callbackURL: `${baseUrl}/callback`,
-}, (accessToken, refreshToken, profile, done) => {
-    // Handle authentication and user profile retrieval here
-    // You can save the user profile to your database or perform any other necessary actions
-    // The `profile` object contains the user's LinkedIn profile information
-    // Call `done()` to indicate successful authentication
-    done(null, profile);
-}));
 
-// Endpoint for initiating LinkedIn authentication
-router.get('/', passport.authenticate('linkedin'));
 
-// Endpoint for LinkedIn callback after authentication
-router.get('/callback', passport.authenticate('linkedin', {
-    successRedirect: '/profile',
-    failureRedirect: '/login',
-}));
+router.get('/', (req, res) => {
+    const scopes = ['openid', 'profile', 'email', 'w_member_social'];
+    const scopeString = encodeURIComponent(scopes.join(' '));
+    const authorizationUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${scopeString}`;
+  
+    res.redirect(authorizationUrl);
+});
+router.get('/callback', async (req, res) => {
+    const { code, state } = req.query;
+    const tokenEndpoint = 'https://www.linkedin.com/oauth/v2/accessToken';
+    const params = new URLSearchParams({
+        grant_type: 'authorization_code',
+        client_id: CLIENT_ID,
+        client_secret: CLIENT_SECRET,
+        redirect_uri: REDIRECT_URI,
+        code: code
+      });
+    try {
 
-// Endpoint for user profile
+      const response = await axios.post(tokenEndpoint, params, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      });
+      
+      const accessToken = response.data.access_token;
+      res.redirect(`/dashboard?access_token=${accessToken}`);
+      
+      // useful for testing the response
+    //   const profileResponse = await axios.get('https://api.linkedin.com/v2/userinfo', {
+    //     headers: {
+    //         'Content-type': 'application/json',
+    //       'Authorization': `Bearer ${accessToken}`
+    //     }
+    //   });
+  
+    //   // Process user profile data
+    //   const userProfile = profileResponse.data;
+    //   res.json(userProfile);
+
+
+    } catch (error) {
+      console.error('Error fetching LinkedIn profile:', error.response.data);
+      res.status(500).send('Error fetching LinkedIn profile');
+    }
+});
+
 router.get('/profile', (req, res) => {
-    // Access the authenticated user's profile from `req.user`
-    // You can render a profile page or return the profile data as JSON
     res.json(req.user);
 });
 

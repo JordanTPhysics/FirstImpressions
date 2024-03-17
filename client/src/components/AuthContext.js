@@ -4,14 +4,14 @@ import axios from 'axios';
 const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
-const url = process.env.PRODUCTION_URL || 'https://firstimpressionlinux.azurewebsites.net/api';
-
+//const baseUrl = process.env.PRODUCTION_URL || process.env.DEV_URL;
+const baseUrl = "http://localhost:3000/api";
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const login = async (username, password) => {
-    const response = await axios.post(`${url}/auth/login`,
+    const response = await axios.post(`${baseUrl}/auth/login`,
       { username, password },
       { withCredentials: true, headers: { 'Content-Type': 'application/json' } });
 

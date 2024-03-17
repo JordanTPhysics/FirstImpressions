@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { useAuth } from './AuthContext';
 import { Link, Navigate, useLocation } from 'react-router-dom';
 
-const baseUrl = process.env.PRODUCTION_URL  
-
+const baseUrl = process.env.PRODUCTION_URL || "http://localhost:3000/api";  
 const DashboardComponent = () => {
   const { user, logout } = useAuth();
 
