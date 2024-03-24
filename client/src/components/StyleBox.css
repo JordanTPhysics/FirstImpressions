@@ -1,0 +1,44 @@
+:root{
+    --primary-color: rgba(8, 46, 5);
+    --bg-color: rgb(44, 44, 44);
+    --txt-color: #33d70e;
+}
+@media screen and (max-width: 799px){
+  .outer-rect {
+    width: 80vw;
+    height: 20vh;
+  }
+}
+@media screen and (min-width: 800px){
+  .outer-rect {
+    width: 30rem;
+    height: 12rem;
+  }
+}
+.col-6{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer-rect {
+    background-color: var(--bg-color);
+    border: 3px solid var(--txt-color);
+    position: center;
+    margin: 1vh;
+  }
+  
+  .inner-rect {
+    left: 0%;
+    top: 0%;
+    background-color: var(--txt-color);
+    position: absolute;
+    transition: width 0.3s, height 0.3s;
+    transform: skewX(-10deg);
+  }
+
+
+  .outer-rect h3, h4 {
+    z-index: 1000;
+  }
+

@@ -13,7 +13,7 @@ const Footer = () => {
 
     <footer id="outreach" className="App-footer row">
     <form>
-    <h2  style={{ "color":"orange"}}>Interested in boosting your business? Get in touch Now!</h2>
+    <h2 >Interested in boosting your business? Get in touch Now!</h2>
 
     <div className="form-group">
       <label htmlFor="name">Name</label>

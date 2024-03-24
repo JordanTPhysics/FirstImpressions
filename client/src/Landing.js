@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import './components/formstyle.css';
+import StyleBox from './components/StyleBox';
 const Landing = () => {
 
   return (
@@ -19,12 +20,11 @@ const Landing = () => {
         <div className="pricing-grid">
           <div className='col-md-4 pricing-card'>
             <h3>HANDLE EVERYTHING YOURSELF?</h3>
-            <h4>That's fine if you have very little on your plate.
-            But if you're pretty swamped already... this isn't a viable option.</h4>
+            <h4>That's fine if you have very little on your plate. But if you're pretty swamped already... this isn't a viable option.</h4>
           </div>
           <div className='col-md-4 pricing-card'>
             <h3>AGENCY HIRE?</h3>
-            <h4> Don't have a marketingbudget of tens of thousands of euros?Then your account could end up being managed  by the intern of the assistants' assistant.
+            <h4>Unless you've got enough money and patience to get good service from them, you'll probably be managed by the intern of the assistants' assistant.
             Not exactly optimal.</h4>
           </div>
           <div className='col-md-4 pricing-card'>
@@ -39,32 +39,20 @@ const Landing = () => {
       <div className='row'>
         <h1>"OK... So What Makes
           You So Different?"</h1>
-        <div className='col-sm-2'></div>
-        <div className='col-md-4 info-card'>
-          <h3>NO RISK</h3>
-          <h4>We only win if you win. That's the basis for a good partnership.
-          You won't carry all the risk, we'll share it.</h4>
+        <div className='col-6'>
+        <StyleBox title={"NO RISK"} text={"We only win if you win. That's the basis for a good partnership. You won't carry all the risk, we'll share it."}/>
         </div>
-        <div className='col-md-4 info-card'>
-          <h3>RESULTS</h3>
-          <h4>Our first priority is to get you results.
-          Less talk, more walk.</h4>
+        <div className='col-6 '>
+          <StyleBox title={"RESULTS"} text={"Our first priority is to get you results. Less talk, more walk."}/>
         </div>
-        <div className='col-sm-2'></div>
       </div>
       <div className='row'>
-        <div className='col-sm-2'></div>
-        <div className='col-md-4 info-card'>
-          <h3>LOCAL</h3>
-          <h4> We're not tucked away in some anonymous call center.
-          We're a local company, so you'll be able to reach us when you need us.</h4>
+        <div className='col-6 '>
+          <StyleBox title={"LOCAL"} text={"We're not tucked away in some anonymous call center. We're a local company, so you'll be able to reach us when you need us."}/>
         </div>
-        <div className='col-md-4 info-card'>
-          <h3>SPECIALIZED</h3>
-          <h4>Jack of all trades... master of none. Specialization works
-          That's why we work with industries we know, so we can guarantee results.</h4>
+        <div className='col-6 '>
+          <StyleBox title={"SPECIALIZED"} text={"Jack of all trades... master of none. Specialization works. That's why we work with industries we know, so we can guarantee results."}/>
         </div>
-        <div className='col-sm-2'></div>
       </div>
       <section className='row'>
 

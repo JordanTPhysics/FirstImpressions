@@ -7,7 +7,14 @@
   --bs-gutter-y: 0 !important;
 }
 
-
+:root{
+  --primary-color: rgba(8, 46, 5);
+  --bg-color: rgb(44, 44, 44);
+  --txt-color: #33d70e;
+  --btn-color: white;
+  --bs-gutter-x: 0 !important;
+  --bs-gutter-y: 0 !important;
+}
 
 @media screen and (max-width: 499px) {
 
@@ -161,7 +168,6 @@
 
   .pricing-card {
     width: 25vw;
-    height: 50vh;
   }
 
   .pricing-grid {
@@ -188,7 +194,7 @@
 }
 
 .user-box {
-  background-color: rgba(105, 104, 104, 0.6);
+  background-color: var(--bg-color);
   align-items: center;
   justify-content: center;
   display: flex;
@@ -202,17 +208,22 @@
   padding-bottom: 1em;
 }
 
-.pricing-card {
-  border: 3px solid #000;
-  border-radius: 10px;
+.pricing-card  {
+  border: 3px solid var(--txt-color);
   padding: 1em;
   margin: 1em;
-  background-color: #efe3e3fa;
-  color: #000;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   transition: background-color 0.5s ease-in-out;
   min-height: fit-content;
   max-height: 40vh;
+}
+
+.pricing-card h4{
+  text-align: center;
+  color: var(--txt-color);
+  text-shadow: none;
 }
 
 .info-card {
@@ -250,7 +261,9 @@ h4 {
 
 .App-header {
   display: grid;
-  background-color: rgb(36, 37, 37);
+  background-image: url("../public/images/aiPower.jpg");
+  background-position: center;
+  background-size: cover;
   width: 100vw;
   padding: 1em;
   text-align: center;
@@ -281,25 +294,27 @@ form {
 
 .App-btn {
   padding: 0.8vh;
-  border: #000 solid 0.5vh;
-  border-radius: 60%;
+  border: var(--btn-color) solid 3px;
+  border-radius: 0%;
   text-decoration: none;
   font-size: 2vh;
   transition: ease .5s;
-  color: black;
+  color: var(--txt-color);
   text-decoration: none;
   text-transform: none;
-  background-color: goldenrod;
+  background-color: var(--bg-color);
 
 }
 
 .App-btn:hover {
-  background-color: red;
-  border-radius: 30%;
+  background-color: var(--txt-color);
+  border-color: var(--bg-color);
+  border-radius: 15%;
   transition: ease .5s;
   text-decoration: none;
   text-transform: none;
   transform: scale(1.1);
+  color: var(--bg-color);
 }
 
 .links-list {
@@ -330,15 +345,3 @@ a {
 
 }
 
-.pricing-card:hover {
-  background-color: #4f0f0f;
-}
-
-
-.pricing-card:hover:nth-child(2) {
-  background-color: #114211;
-}
-
-.pricing-card:hover:nth-child(3) {
-  background-color: #562575;
-}

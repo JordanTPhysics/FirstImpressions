@@ -1,7 +1,9 @@
 :root {
 
-  --primary-color: rgba(8, 46, 5, 0.5);
-  --red-color: rgba(233, 72, 8, 0.8);
+  --primary-color: rgba(8, 46, 5);
+  --bg-color: rgb(44, 44, 44);
+  --txt-color: #33d70e;
+  --btn-color: #896d21;
   --bs-gutter-x: 0 !important;
   --bs-gutter-y: 0 !important;
 }
@@ -21,11 +23,10 @@ html {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
-
-    background-image: url("/images/aiPower.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background: linear-gradient(to left, rgb(8, 46, 5), rgb(44, 44, 44));
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
 }
 
@@ -34,8 +35,17 @@ html {
   font-family: "Konit", sans-serif;
   text-align: center;
   position: relative;
-  font-weight: bold;
-  color: whitesmoke
+  font-weight: 600;
+  color: var(--primary-color);
+  text-shadow:
+    1px 1px 0 var(--txt-color),
+    -1px -1px 0 var(--txt-color),
+    1px -1px 0 var(--txt-color),
+    -1px 1px 0 var(--txt-color);
+}
+
+.txt-highlight {
+  color: var(--txt-color);
 }
 
 h1 {
@@ -43,9 +53,7 @@ h1 {
 }
 
 /* SmartPhone */
-@media screen and (max-width: 499px) {
-
-}
+@media screen and (max-width: 499px) {}
 
 /* Tablets */
 @media screen and (max-width: 899px) and (min-width: 500px) {}
@@ -77,9 +85,3 @@ p {
 a {
   text-decoration: none;
 }
-
-
-
-
-
-

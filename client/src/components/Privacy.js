@@ -41,7 +41,7 @@ const PrivacyPolicy = () => {
                         <h3>Restrictions</h3>
                         <p>
                             You must not:
-                            <ul className='info-card'>
+                            <ul>
                                 <li>Republish material from {domain}</li>
                                 <li>Sell, rent, or sub-license material from {domain}</li>
                                 <li>Reproduce, duplicate, or copy material from {domain}</li>
@@ -70,7 +70,7 @@ const PrivacyPolicy = () => {
 
                             <h3>How We Use Information</h3>
                             <p>We may use the information we collect for various purposes, including to:</p>
-                            <ul className='info-card'>
+                            <ul >
                                 <li>Provide, maintain, and improve our services.</li>
                                 <li>Communicate with you about our services.</li>
                                 <li>Personalize and improve your experience.</li>
