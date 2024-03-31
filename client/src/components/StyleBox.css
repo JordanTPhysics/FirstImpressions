@@ -34,7 +34,7 @@
     background-color: var(--txt-color);
     position: absolute;
     transition: width 0.3s, height 0.3s;
-    transform: skewX(-10deg);
+    transform: skewX(-20deg);
   }
 
 

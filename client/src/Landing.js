@@ -12,7 +12,7 @@ const Landing = () => {
           And they are all important too!</h3>
         <br />
         <br />
-        <h2 className='bold' >So How Can I Optimize
+        <h2 className='str' >So How Can I Optimize
           My Marketing?
         </h2>
       </section>
@@ -37,7 +37,7 @@ const Landing = () => {
       </section>
 
       <div className='row'>
-        <h1>"OK... So What Makes
+        <h1 className='str'>"OK... So What Makes
           You So Different?"</h1>
         <div className='col-6'>
         <StyleBox title={"NO RISK"} text={"We only win if you win. That's the basis for a good partnership. You won't carry all the risk, we'll share it."}/>
@@ -56,7 +56,7 @@ const Landing = () => {
       </div>
       <section className='row'>
 
-        <h2>Let's find a plan for you</h2>
+        <h2 className='str'>Let's find a plan for you</h2>
         <div className="pricing-grid">
           <div className="pricing-card">
             <h3>Basic</h3>

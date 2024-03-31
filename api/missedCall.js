@@ -12,6 +12,8 @@ router.post('/voice', (req, res) => {
     res.type('text/xml');
     res.send(twiml.toString());
     res.status(200).end();
+
 });
 
-module.exports = router
+
+module.exports = router;

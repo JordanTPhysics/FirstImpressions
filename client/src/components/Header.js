@@ -4,20 +4,11 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
 
-  const [highlightedLetter, setHighlightedLetter] = useState(null);
 
-  const handleMouseEnter = (index) => {
-    setHighlightedLetter(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHighlightedLetter(null);
-  };
 
   const executeScroll = () => {
     document.getElementById('outreach').scrollIntoView({ behavior: 'smooth' })
   }
-  const title = 'First Impression Marketing';
 
   return (
     <header className="App-header row m-0">
@@ -26,16 +17,9 @@ const Header = () => {
         <img src="/images/FirstImpression.png" alt="First Impression Marketing" className="App-logo" />
       </div>
       <div >
-        <h1>        
-          {title.split('').map((letter, index) => (
-          <span
-            key={index}
-            className={index === highlightedLetter ? 'txt-highlight' : ''}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}>
-            {letter}
-          </span>
-        ))} </h1>
+        <h1 className='title'>        
+  First Impression Marketing
+           </h1>
         <h2>Scalable Marketing Solutions </h2>
         <button className='App-btn' onClick={executeScroll}>Yes Please!</button>
       </div>

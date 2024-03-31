@@ -10,8 +10,9 @@
 :root{
   --primary-color: rgba(8, 46, 5);
   --bg-color: rgb(44, 44, 44);
+  --btn-color: whitesmoke;
   --txt-color: #33d70e;
-  --btn-color: white;
+  --str-colour: rgb(150, 11, 11);
   --bs-gutter-x: 0 !important;
   --bs-gutter-y: 0 !important;
 }
@@ -198,7 +199,16 @@
   align-items: center;
   justify-content: center;
   display: flex;
+}
+.focused{
+  color: var(--txt-color);
+  text-shadow: none;
+}
 
+.str{
+  color: var(--str-colour);
+  text-shadow: none;
+  text-decoration: double;
 }
 
 .pricing-grid {
@@ -338,6 +348,10 @@ a {
   text-decoration: none;
   color: #fff;
 
+}
+.title:hover {
+  color: var(--txt-color);
+  text-shadow: none;
 }
 
 .pricing-card:hover {

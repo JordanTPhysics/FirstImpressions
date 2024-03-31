@@ -3,7 +3,7 @@
   --primary-color: rgba(8, 46, 5);
   --bg-color: rgb(44, 44, 44);
   --txt-color: #33d70e;
-  --btn-color: #896d21;
+  --str-colour: rgb(150, 11, 11);
   --bs-gutter-x: 0 !important;
   --bs-gutter-y: 0 !important;
 }
@@ -23,7 +23,7 @@ html {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
-  background: linear-gradient(to left, rgb(8, 46, 5), rgb(44, 44, 44));
+  background: linear-gradient(to left, var(--primary-color), var(--bg-color));
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
