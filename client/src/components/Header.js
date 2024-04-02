@@ -20,7 +20,7 @@ const Header = () => {
         <h1 className='title'>        
   First Impression Marketing
            </h1>
-        <h2>Scalable Marketing Solutions </h2>
+        <h2 className='str'>Scalable Marketing Solutions </h2>
         <button className='App-btn' onClick={executeScroll}>Yes Please!</button>
       </div>
 

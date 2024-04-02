@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
         setTab(tab);
     }
 
-    const domain = 'firstimpress.io';
+    const domain = 'First Impressions';
 
     return (
         <div className='container m-0'>
@@ -30,7 +30,7 @@ const PrivacyPolicy = () => {
                 <div className='row'>
                     {tab === 'terms' ? (<div> <h3>Terms and Conditions</h3>
                         <p>
-                            By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use <a href="https://firstimpress.io">{domain}</a> if you do not accept all of the terms and conditions stated on this page.
+                            By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use <a href="https://myfirstimpress.com/">{domain}</a> if you do not accept all of the terms and conditions stated on this page.
                         </p>
 
                         <h3>License</h3>
@@ -91,7 +91,7 @@ const PrivacyPolicy = () => {
 
                             <h3>Contact Us</h3>
                             <p>If you have any questions or concerns about our Privacy Policy, please contact us at info@firstimpress.io</p>
-                            <p>This Privacy Policy was last updated on 24/02/2024.</p>
+                            <p>This Privacy Policy was last updated on 02/04/2024.</p>
                         </div>)
 
                     }</div>
