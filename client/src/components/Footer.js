@@ -73,6 +73,7 @@ const Footer = () => {
 
     <button type="submit" className="App-btn" onClick={handleSubmit}>Submit</button>
   </form>
+  <h3>Alternatively reach out directly at hello@yourfirstimpress.com</h3>
   </footer>
   );
 }

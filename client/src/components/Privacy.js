@@ -90,7 +90,7 @@ const PrivacyPolicy = () => {
                             <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
 
                             <h3>Contact Us</h3>
-                            <p>If you have any questions or concerns about our Privacy Policy, please contact us at info@firstimpress.io</p>
+                            <p>If you have any questions or concerns about our Privacy Policy, please contact us at hello@yourfirstimpress.com</p>
                             <p>This Privacy Policy was last updated on 02/04/2024.</p>
                         </div>)
 
