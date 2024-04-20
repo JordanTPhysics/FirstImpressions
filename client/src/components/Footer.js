@@ -2,12 +2,30 @@
 import React, { useState } from "react";
 import $ from 'jquery';
 import './formstyle.css';
+const emailjs = require('emailjs-com');
+
+const options = {
+  serviceID: 'service_iryb57a',
+  templateID: 'template_vjk0znj',
+  publicKey: '3oQOYQi8O2nwB1qNI'
+};
+
 const Footer = () => {
 
   const [formData, setFormData] = useState({});
   
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs.send(options.serviceID, options.templateID, formData, options.publicKey)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   };
 
   const handleFocus = (e) => {
@@ -40,7 +58,7 @@ const Footer = () => {
 
     <div className="form-group">
       <label htmlFor="phone" id="nameLabel">Phone</label>
-      <input type="tel" name="phone" id="phone" required onChange={handleChange} onFocus={handleFocus}/>
+      <input type="tel" name="phone" id="phone" onChange={handleChange} onFocus={handleFocus}/>
     </div>
 
     <div className="form-group">
@@ -53,7 +71,7 @@ const Footer = () => {
       <textarea name="message" id="message" required onChange={handleChange} onFocus={handleFocus}></textarea>
     </div>
 
-    <button type="submit" className="App-btn">Submit</button>
+    <button type="submit" className="App-btn" onClick={handleSubmit}>Submit</button>
   </form>
   </footer>
   );
